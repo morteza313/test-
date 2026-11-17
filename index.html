@@ -1,114 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>App Video Loop</title>
-    <style>
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise Loops Test</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #111;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      gap: 2rem;
+    }
+    .exercise-card {
+      width: 100%;
+      max-width: 400px;
+      background: #1e293b;
+      padding: 1rem;
+      border-radius: 12px;
+      text-align: center;
+    }
+    video {
+      width: 100%;
+      border-radius: 8px;
+      pointer-events: none; /* Prevents mobile tap-to-pause overlay */
+    }
+  </style>
+</head>
+<body>
 
-      body {
-        font-family:
-          system-ui,
-          -apple-system,
-          sans-serif;
-        background-color: #0f172a;
-        color: #ffffff;
-      }
+  <div class="exercise-card">
+    <video autoplay loop muted playsinline>
+      <source src="./IMG_4659.MP4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <h3>Exercise 1 (Bench Press)</h3>
+  </div>
 
-      /* Container for the looping video banner */
-      .video-banner {
-        position: relative;
-        width: 100%;
-        height: 60vh; /* Adjust height as needed (e.g., 100vh for full screen) */
-        min-height: 300px;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+  <div class="exercise-card">
+    <video autoplay loop muted playsinline>
+      <source src="./IMG_4660.MP4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <h3>Exercise 2 (Row)</h3>
+  </div>
 
-      /* Make the video fill the container cleanly like a background GIF */
-      .video-banner video {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-        pointer-events: none; /* Prevents mobile users from accidentally tapping/pausing it */
-      }
-
-      /* Optional dark overlay so text on top stays readable */
-      .video-overlay {
-        position: absolute;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.4);
-        z-index: 2;
-      }
-
-      /* Content placed on top of the video */
-      .banner-content {
-        position: relative;
-        z-index: 3;
-        text-align: center;
-        padding: 1.5rem;
-      }
-
-      .banner-content h1 {
-        font-size: clamp(1.75rem, 4vw, 3rem);
-        margin-bottom: 0.5rem;
-      }
-    </style>
-  </head>
-  <body>
-    <section class="video-banner">
-      <!-- 
-      autoplay + muted + loop + playsinline = exact GIF behavior on iOS & Android.
-      Swap "./assets/hero-loop.mp4" with a Cloudinary URL if hosting externally.
-    -->
-      <div class="exercise-card">
-        <!-- Bench Press Animation -->
-        <video
-          autoplay
-          loop
-          muted
-          playsinline
-          width="100%"
-          style="border-radius: 8px"
-        >
-          <source src="./assets/bench-press.mp4" type="video/mp4" />
-        </video>
-        <h3>Barbell Bench Press</h3>
-      </div>
-
-      <div class="exercise-card">
-        <!-- Barbell Row Animation -->
-        <video
-          autoplay
-          loop
-          muted
-          playsinline
-          width="100%"
-          style="border-radius: 8px"
-        >
-          <source src="./assets/barbell-row.mp4" type="video/mp4" />
-        </video>
-        <h3>Bent-Over Barbell Row</h3>
-      </div>
-
-      <div class="video-overlay"></div>
-
-      <div class="banner-content">
-        <h1>Welcome to Our App</h1>
-        <p>Lightweight, smooth looping background video.</p>
-      </div>
-    </section>
-  </body>
+</body>
 </html>
